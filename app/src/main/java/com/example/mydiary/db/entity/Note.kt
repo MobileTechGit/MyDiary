@@ -3,6 +3,7 @@ package com.example.mydiary.db.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.util.*
 
 @Entity
 data class Note(
@@ -11,5 +12,7 @@ data class Note(
     @ColumnInfo(name = "title")
     val title: String,
     @ColumnInfo(name = "body")
-    val body: String
+    val body: String,
+    @ColumnInfo(name = "createdDate")
+    val createdDate: Date
 )

@@ -9,6 +9,7 @@ import com.example.mydiary.databinding.ActivityAddNoteBinding
 import com.example.mydiary.db.entity.Note
 import com.example.mydiary.ui.viewmodels.NotesViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
 
 @AndroidEntryPoint
 class AddNoteActivity : AppCompatActivity() {
@@ -22,11 +23,13 @@ class AddNoteActivity : AppCompatActivity() {
 
         binding.addNoteActivity = this
         binding.name = "Add Note Activity"
+        title = "Add Note Activity"
     }
 
     fun onSaveClick() {
         binding.apply {
-            notesViewModel.saveNote(Note(0, titleEt.text.toString(), bodyEt.text.toString()))
+            notesViewModel.saveNote(titleEt.text.toString(), bodyEt.text.toString())
         }
+        finish()
     }
 }

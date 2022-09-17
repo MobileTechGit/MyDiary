@@ -15,39 +15,34 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="16dp"
         tools:context=".ui.activity.AddNoteActivity">
-
-        <TextView
-            android:id="@+id/heading_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@{name, default=Add_Note_Activity}"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/title_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Title"
-            app:layout_constraintTop_toBottomOf="@id/heading_tv" />
+            android:hint="@string/title_label"
+            app:layout_constraintTop_toTopOf="parent"
+            android:inputType="text"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/body_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Body"
+            android:hint="@string/description_label"
+            android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/title_et" />
 
         <Button
             android:id="@+id/save_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="@color/purple_700"
-            android:text="save"
+            android:text="@string/save_label"
             android:onClick="@{() -> addNoteActivity.onSaveClick()}"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/body_et" />
 
