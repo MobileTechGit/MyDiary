@@ -1,6 +1,7 @@
 package com.example.mydiary.db.dao
 
 import androidx.lifecycle.LiveData
+import androidx.paging.PagingSource
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -12,6 +13,9 @@ import kotlinx.coroutines.flow.Flow
 interface NoteDao {
     @Query("SELECT * FROM Note")
     fun getAll(): Flow<List<Note>>
+
+    @Query("SELECT * FROM Note order by createdDate desc")
+    fun getPagingSource(): PagingSource<Int, Note>
 
     @Query("SELECT * FROM Note WHERE noteId IN (:noteIds)")
     fun loadAllByIds(noteIds: IntArray): List<Note>

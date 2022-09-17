@@ -3,6 +3,7 @@ package com.example.mydiary.repositories
 import android.app.Application
 import android.content.Context
 import androidx.lifecycle.LiveData
+import androidx.paging.PagingSource
 import com.example.mydiary.db.entity.Note
 import com.example.mydiary.db.room.DiaryDatabase
 import dagger.hilt.EntryPoint
@@ -16,7 +17,7 @@ import javax.inject.Inject
 
 class NotesRepository(context: Context) {
 
-    val diaryDatabase: DiaryDatabase = getDiaryDatabase(context)
+    private val diaryDatabase: DiaryDatabase = getDiaryDatabase(context)
 
     fun saveNote(note: Note) {
         diaryDatabase.noteDao().insertAll(note)
@@ -26,8 +27,8 @@ class NotesRepository(context: Context) {
         return diaryDatabase.noteDao().getAll()
     }
 
-    fun getMessage() : String {
-        return "Hello from repo"
+    fun getNotesPagingSource(): PagingSource<Int, Note> {
+        return diaryDatabase.noteDao().getPagingSource()
     }
 
     @InstallIn(SingletonComponent::class)
