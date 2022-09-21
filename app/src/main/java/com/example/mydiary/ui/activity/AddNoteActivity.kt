@@ -6,10 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.mydiary.R
 import com.example.mydiary.databinding.ActivityAddNoteBinding
-import com.example.mydiary.db.entity.Note
-import com.example.mydiary.ui.viewmodels.NotesViewModel
+import com.example.mydiary.viewmodels.NotesViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.*
 
 @AndroidEntryPoint
 class AddNoteActivity : AppCompatActivity() {

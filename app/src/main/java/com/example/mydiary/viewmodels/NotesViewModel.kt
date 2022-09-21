@@ -1,4 +1,4 @@
-package com.example.mydiary.ui.viewmodels
+package com.example.mydiary.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -16,10 +16,11 @@ import javax.inject.Named
 const val TAG = "NotesViewModel"
 
 @HiltViewModel
-class NotesViewModel @Inject constructor() : ViewModel() {
-    @Inject
-    @Named("NotesRepo")
-    lateinit var notesRepository: NotesRepository
+class NotesViewModel @Inject constructor(
+    private val notesRepository: NotesRepository) : ViewModel() {
+//    @Inject
+//    @Named("NotesRepo")
+//    private lateinit var notesRepository: NotesRepository
 
     val pagingNotesFlow: Flow<PagingData<Note>>
 
@@ -30,15 +31,11 @@ class NotesViewModel @Inject constructor() : ViewModel() {
         }.flow.cachedIn(viewModelScope)
     }
 
-    fun saveNote(note: Note) {
-        viewModelScope.launch(Dispatchers.IO) {
-            notesRepository.saveNote(note)
-        }
-    }
-
     fun saveNote(title: String, body: String) {
-        val currentDateTime = Date()
-        saveNote(Note(0, title, body, currentDateTime))
+        viewModelScope.launch(Dispatchers.IO) {
+            val currentDateTime = Date()
+            var a = notesRepository.saveNote(Note(0, title, body, currentDateTime))
+        }
     }
 
     fun getAllNotes(): Flow<List<Note>> {

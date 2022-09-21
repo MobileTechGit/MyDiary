@@ -1,13 +1,13 @@
 package com.example.mydiary.di.module
 
-import android.content.Context
 import android.util.Log
+import com.example.mydiary.db.room.DiaryDatabase
 import com.example.mydiary.repositories.NotesRepository
+import com.example.mydiary.repositories.NotesRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.android.scopes.ViewModelScoped
 import javax.inject.Named
 
@@ -17,9 +17,16 @@ class RepositoryModule {
 
     @ViewModelScoped
     @Provides
-    @Named("NotesRepo")
-    fun getNotesRepository(@ApplicationContext context: Context) : NotesRepository {
+    fun getNotesRepository(diaryDatabase: DiaryDatabase) : NotesRepository {
         Log.i("object RepositoryModule", "getNotesRepository: ")
-        return NotesRepository(context)
+        return NotesRepositoryImpl(diaryDatabase)
+    }
+
+    @ViewModelScoped
+    @Provides
+    @Named("NotesRepo")
+    fun getNotesRepo(diaryDatabase: DiaryDatabase) : NotesRepository {
+        Log.i("object RepositoryModule", "getNotesRepository: ")
+        return NotesRepositoryImpl(diaryDatabase)
     }
 }

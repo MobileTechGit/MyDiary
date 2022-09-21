@@ -2,27 +2,20 @@ package com.example.mydiary.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mydiary.R
 import com.example.mydiary.databinding.ActivityMainBinding
 import com.example.mydiary.ui.adapters.NoteAdapter
 import com.example.mydiary.ui.adapters.NotePagingAdapter
-import com.example.mydiary.ui.viewmodels.NotesViewModel
+import com.example.mydiary.viewmodels.NotesViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 
 const val TAG = "MainActivity"
 @AndroidEntryPoint
