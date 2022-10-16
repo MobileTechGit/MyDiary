@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="addNoteActivity"
             type="com.example.mydiary.ui.activity.AddNoteActivity" />
+
         <variable
             name="name"
             type="String" />
@@ -19,20 +21,32 @@
         tools:context=".ui.activity.AddNoteActivity">
 
         <EditText
+            android:id="@+id/date_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10 10 2022"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
             android:id="@+id/title_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/title_label"
-            app:layout_constraintTop_toTopOf="parent"
+            android:importantForAutofill="no"
             android:inputType="text"
-            android:importantForAutofill="no" />
+            app:layout_constraintTop_toBottomOf="@id/date_et" />
 
         <EditText
             android:id="@+id/body_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/description_label"
             android:layout_marginTop="10dp"
+            android:hint="@string/description_label"
             app:layout_constraintTop_toBottomOf="@id/title_et" />
 
         <Button
@@ -41,8 +55,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/purple_700"
-            android:text="@string/save_label"
             android:onClick="@{() -> addNoteActivity.onSaveClick()}"
+            android:text="@string/save_label"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/body_et" />
 

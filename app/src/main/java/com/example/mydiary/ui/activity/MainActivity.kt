@@ -14,7 +14,7 @@ import com.example.mydiary.ui.adapters.NoteAdapter
 import com.example.mydiary.ui.adapters.NotePagingAdapter
 import com.example.mydiary.viewmodels.NotesViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 const val TAG = "MainActivity"
@@ -50,7 +50,6 @@ class MainActivity : AppCompatActivity() {
         binding.noteRv.layoutManager = LinearLayoutManager(this@MainActivity)
         lifecycleScope.launch {
             noteViewModel.pagingNotesFlow.collectLatest {
-//                Log.i(TAG, "onCreate: ${it}")
                 pagingAdapter.submitData(it)
             }
         }

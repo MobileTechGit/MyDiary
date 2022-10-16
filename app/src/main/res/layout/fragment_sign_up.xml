@@ -24,7 +24,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/welcome_back_text"
+                android:text="@string/create_new_account_text"
                 android:textColor="@color/off_white"
                 android:textSize="28sp"
                 android:textStyle="bold" />
@@ -32,7 +32,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/login_to_access_your_notes_text"
+                android:text="@string/please_provide_all_the_required_information_text"
                 android:textColor="@color/off_white"
                 android:textSize="16sp" />
 
@@ -60,6 +60,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:text="@string/email_label"
+                android:textColor="@color/off_white"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/email_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/off_white"
+                android:hint="@string/email_label"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/off_white"
+                android:textColorHint="@color/teal_700"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:text="@string/password_label"
                 android:textColor="@color/off_white"
                 android:textSize="16sp" />
@@ -76,32 +96,23 @@
                 android:textColorHint="@color/teal_700"
                 android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/forgot_password_tv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/forgot_password_text"
-                android:textColor="@color/off_white"
-                android:textSize="16sp" />
-
             <Button
-                android:id="@+id/login_btn"
+                android:id="@+id/signup_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:backgroundTint="@color/blue_dark"
-                android:text="@string/login_label"
+                android:text="@string/sign_up_caps_label"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/register_now_tv"
+                android:id="@+id/login_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="8dp"
                 android:autoLink="all"
-                android:text="@string/don_t_have_an_account_register_now_text"
+                android:text="@string/already_have_an_account_text"
                 android:textColor="@color/off_white"
                 android:textSize="14sp" />
         </LinearLayout>

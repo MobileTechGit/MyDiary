@@ -12,9 +12,4 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
     }
-
-    fun onClickLogin(view: View) {
-        startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-    }
-
 }

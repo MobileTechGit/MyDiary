@@ -3,6 +3,8 @@ package com.example.mydiary.db.dao
 import androidx.test.filters.SmallTest
 import com.example.mydiary.db.entity.Note
 import com.example.mydiary.db.room.DiaryDatabase
+import com.example.mydiary.launchFragmentInHiltContainer
+import com.example.mydiary.ui.fragment.LoginFragment
 import com.google.common.truth.Truth.assertThat
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
@@ -57,6 +59,13 @@ class NoteDaoTest {
 
         val notesList = noteDao.getAll().first()
         assertThat(notesList).doesNotContain(note)
+    }
+
+    @Test
+    fun testLaunchFragmentInHiltContainer() {
+        launchFragmentInHiltContainer<LoginFragment> {
+
+        }
     }
 
 }
