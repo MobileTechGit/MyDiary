@@ -7,7 +7,7 @@
 
         <variable
             name="activity"
-            type="com.example.mydiary.ui.activity.MainActivity" />
+            type="com.mittal.mydiary.ui.activity.MainActivity" />
 
         <variable
             name="name"

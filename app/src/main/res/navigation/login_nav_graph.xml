@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.mydiary.ui.fragment.LoginFragment"
+        android:name="com.mittal.mydiary.ui.fragment.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login">
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.mydiary.ui.fragment.SignUpFragment"
+        android:name="com.mittal.mydiary.ui.fragment.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up">
         <action
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/resetPasswordFragment"
-        android:name="com.example.mydiary.ui.fragment.ResetPasswordFragment"
+        android:name="com.mittal.mydiary.ui.fragment.ResetPasswordFragment"
         android:label="fragment_reset_password"
         tools:layout="@layout/fragment_reset_password">
         <action
@@ -45,6 +45,6 @@
     </fragment>
     <activity
         android:id="@+id/mainActivity2"
-        android:name="com.example.mydiary.ui.activity.MainActivity"
+        android:name="com.mittal.mydiary.ui.activity.MainActivity"
         android:label="MainActivity" />
 </navigation>

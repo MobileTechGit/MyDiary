@@ -9,13 +9,13 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.mydiary"
+        applicationId "com.mittal.mydiary"
         minSdk 26
         targetSdk 32
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "com.example.mydiary.HiltTestRunner"
+        testInstrumentationRunner "com.mittal.mydiary.HiltTestRunner"
 
         kapt {
             arguments {
@@ -31,6 +31,9 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            applicationIdSuffix = ".debug"
         }
     }
     compileOptions {
