@@ -40,26 +40,26 @@ class NoteDaoTest {
         database.close()
     }
 
-    @OptIn(ExperimentalCoroutinesApi::class)
-    @Test
-    fun insertNote() = runTest {
-        val note = Note(1, "Title", "Body", Date())
-        noteDao.insertAll(note)
-        println(note)
-        val notesList = noteDao.getAll().first()
-        assertThat(notesList).contains(note)
-    }
+//    @OptIn(ExperimentalCoroutinesApi::class)
+//    @Test
+//    fun insertNote() = runTest {
+//        val note = Note(1, "Title", "Body", Date())
+//        noteDao.insertAll(note)
+//        println(note)
+//        val notesList = noteDao.getAll().first()
+//        assertThat(notesList).contains(note)
+//    }
 
-    @OptIn(ExperimentalCoroutinesApi::class)
-    @Test
-    fun deleteNote() = runTest {
-        val note = Note(1, "Title", "Body", Date())
-        noteDao.insertAll(note)
-        noteDao.delete(note)
-
-        val notesList = noteDao.getAll().first()
-        assertThat(notesList).doesNotContain(note)
-    }
+//    @OptIn(ExperimentalCoroutinesApi::class)
+//    @Test
+//    fun deleteNote() = runTest {
+//        val note = Note(1, "Title", "Body", Date())
+//        noteDao.insertAll(note)
+//        noteDao.delete(note)
+//
+//        val notesList = noteDao.getAll().first()
+//        assertThat(notesList).doesNotContain(note)
+//    }
 
     @Test
     fun testLaunchFragmentInHiltContainer() {

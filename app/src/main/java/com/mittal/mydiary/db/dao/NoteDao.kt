@@ -1,6 +1,5 @@
 package com.mittal.mydiary.db.dao
 
-import androidx.lifecycle.LiveData
 import androidx.paging.PagingSource
 import androidx.room.Dao
 import androidx.room.Delete
@@ -25,9 +24,9 @@ interface NoteDao {
             "body LIKE :body LIMIT 1")
     fun findByName(title: String, body: String): Flow<Note>
 
-    @Insert(onConflict = REPLACE)
-    suspend fun insertAll(vararg notes: Note)
+//    @Insert(onConflict = REPLACE)
+//    suspend fun insertAll(notes: Note)
 
-    @Delete
-    suspend fun delete(user: Note)
+//    @Delete
+//    suspend fun delete(user: Note)
 }

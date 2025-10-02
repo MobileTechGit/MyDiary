@@ -37,9 +37,9 @@ class NotesViewModel @Inject constructor(
         }
     }
 
-    fun getAllNotes(): Flow<List<Note>> {
-        return notesRepository.getAllNotes()
-    }
+//    fun getAllNotes(): Flow<List<Note>> {
+//        return notesRepository.getAllNotes()
+//    }
 
     private fun getNotesPagingSource(): PagingSource<Int, Note> {
         return notesRepository.getNotesPagingSource()

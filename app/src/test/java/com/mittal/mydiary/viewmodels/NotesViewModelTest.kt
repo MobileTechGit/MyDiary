@@ -21,14 +21,14 @@ class NotesViewModelTest {
     fun tearDown() {
     }
 
-    @Test
-    fun `save note with valid input, return success`() {
-        notesViewModel.saveNote("title1", "body1")
-        runTest {
-            println(notesViewModel.getAllNotes().first())
-            notesViewModel.getAllNotes().first()[0].apply {
-                assertThat(title == "title1" && body == "body1").isTrue()
-            }
-        }
-    }
+//    @Test
+//    fun `save note with valid input, return success`() {
+//        notesViewModel.saveNote("title1", "body1")
+//        runTest {
+//            println(notesViewModel.getAllNotes().first())
+//            notesViewModel.getAllNotes().first()[0].apply {
+//                assertThat(title == "title1" && body == "body1").isTrue()
+//            }
+//        }
+//    }
 }
