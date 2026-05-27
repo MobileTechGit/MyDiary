@@ -1,11 +1,7 @@
 package com.mittal.mydiary.db.dao
 
 import androidx.paging.PagingSource
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy.REPLACE
-import androidx.room.Query
+import androidx.room.*
 import com.mittal.mydiary.db.entity.Note
 import kotlinx.coroutines.flow.Flow
 
@@ -24,9 +20,9 @@ interface NoteDao {
             "body LIKE :body LIMIT 1")
     fun findByName(title: String, body: String): Flow<Note>
 
-//    @Insert(onConflict = REPLACE)
-//    suspend fun insertAll(notes: Note)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAll(vararg notes: Note)
 
-//    @Delete
-//    suspend fun delete(user: Note)
+    @Delete
+    suspend fun delete(note: Note)
 }

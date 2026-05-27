@@ -11,7 +11,7 @@ class NotesRepositoryImpl @Inject constructor(
 ) : NotesRepository {
 
     override suspend fun saveNote(note: Note) {
-//        diaryDatabase.noteDao().insertAll(note)
+        diaryDatabase.noteDao().insertAll(note)
     }
 
     override fun getAllNotes(): Flow<List<Note>> {
